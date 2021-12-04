@@ -6,6 +6,7 @@ use std::io::{BufReader, BufRead};
 pub mod day {
     pub mod one;
     pub mod two;
+    pub mod three;
 }
 
 pub fn get_lines(input: &str) -> Vec<String> {
