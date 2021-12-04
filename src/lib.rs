@@ -7,6 +7,7 @@ pub mod day {
     pub mod one;
     pub mod two;
     pub mod three;
+    pub mod four;
 }
 
 pub fn get_lines(input: &str) -> Vec<String> {

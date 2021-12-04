@@ -7,4 +7,6 @@ fn main() {
     println!("Day 2 - Part 2: {}", day::two::part_two(get_lines("./input/day_2_part_2.txt")));
     println!("Day 3 - Part 1: {}", day::three::part_one(get_lines("./input/day_3_part_1.txt")));
     println!("Day 3 - Part 2: {}", day::three::part_two(get_lines("./input/day_3_part_2.txt")));
+    println!("Day 4 - Part 1: {}", day::four::part_one(get_lines("./input/day_4_part_1.txt")));
+    println!("Day 4 - Part 2: {}", day::four::part_two(get_lines("./input/day_4_part_2.txt")));
 }
