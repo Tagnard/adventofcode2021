@@ -1,7 +1,6 @@
 /// --- Day 1: Sonar Sweep ---
 /// 
-pub fn part_one(input: Vec<String>) -> i64 {
-    let input: Vec<i64> = input.iter().map(|x| x.parse::<i64>().unwrap()).collect();
+pub fn part_one(input: Vec<u32>) -> u64 {
     
     let mut inc = 0;
     let mut dec = 0;
@@ -21,26 +20,25 @@ pub fn part_one(input: Vec<String>) -> i64 {
 fn verify_part_one() {
     assert_eq!(part_one(
         vec![
-            "199".to_owned(), 
-            "200".to_owned(), 
-            "208".to_owned(), 
-            "210".to_owned(), 
-            "200".to_owned(), 
-            "207".to_owned(),
-            "240".to_owned(),
-            "269".to_owned(),
-            "260".to_owned(),
-            "263".to_owned(),
+            199,
+            200,
+            208,
+            210,
+            200,
+            207,
+            240,
+            269,
+            260,
+            263,
         ]
     ), 7);
 }
 
-pub fn part_two(input: Vec<String>) -> i64 {
-    let input: Vec<i64> = input.iter().map(|x| x.parse::<i64>().unwrap()).collect();
+pub fn part_two(input: Vec<u32>) -> u32 {
 
-    let mut count: i64 = 0; 
-    let mut prev_sum: i64 = 0;
-    let mut curr_sum: i64;
+    let mut count: u32 = 0; 
+    let mut prev_sum: u32 = 0;
+    let mut curr_sum: u32;
 
     for i in 1..input.len() -1 {
         let a = input[i -1];
@@ -64,16 +62,16 @@ pub fn part_two(input: Vec<String>) -> i64 {
 fn verify_part_two() {
     assert_eq!(part_two(
         vec![
-            "199".to_owned(), 
-            "200".to_owned(), 
-            "208".to_owned(), 
-            "210".to_owned(), 
-            "200".to_owned(), 
-            "207".to_owned(),
-            "240".to_owned(),
-            "269".to_owned(),
-            "260".to_owned(),
-            "263".to_owned(),
+            199,
+            200,
+            208,
+            210,
+            200,
+            207,
+            240,
+            269,
+            260,
+            263,
         ]
     ), 5);
 }

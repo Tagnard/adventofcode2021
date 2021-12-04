@@ -36,20 +36,20 @@ fn verify_part_one() {
     ]), 198);
 }
 
-pub fn part_two(input: Vec<String>) -> u32 {
-    let input_len = input[0].len() as u32;
-    let input: Vec<u32> = input.iter().map(|e| u32::from_str_radix(&e, 2).unwrap()).collect();
+pub fn part_two(input: Vec<String>) -> i32 {
+    let input_len = input[0].len() as i32;
+    let input: Vec<i32> = input.iter().map(|e| i32::from_str_radix(&e, 2).unwrap()).collect();
 
-    let most_common = |input: Vec<u32>| -> u32 {
-        let mut matches: Vec<u32> = input;
+    let most_common = |input: Vec<i32>| -> i32 {
+        let mut matches: Vec<i32> = input;
         for i in (0..input_len).rev() {
             if matches.iter().count() > 1 {
-                let ones = matches.iter().filter(|&&x| (x & 2u32.pow(i)) == 2u32.pow(i)).count();
+                let ones = matches.iter().filter(|&&x| (x & 2i32.pow(i as u32)) == 2i32.pow(i as u32)).count();
                 let zeros = matches.len() - ones;
                 if ones == zeros || ones > zeros {
-                    matches = matches.into_iter().filter(|x| x & 2u32.pow(i) == 2u32.pow(i)).collect();
+                    matches = matches.into_iter().filter(|x| x & 2i32.pow(i as u32) == 2i32.pow(i as u32)).collect();
                 } else {
-                    matches = matches.into_iter().filter(|x| x & 2u32.pow(i) == 0).collect();
+                    matches = matches.into_iter().filter(|x| x & 2i32.pow(i as u32) == 0).collect();
                 }
             } else {
                 break;
@@ -59,16 +59,16 @@ pub fn part_two(input: Vec<String>) -> u32 {
         matches[0]
     };
 
-    let least_common = |input: Vec<u32>| -> u32 {
-        let mut matches: Vec<u32> = input;
+    let least_common = |input: Vec<i32>| -> i32 {
+        let mut matches: Vec<i32> = input;
         for i in (0..input_len).rev() {
             if matches.iter().count() > 1 {
-                let ones = matches.iter().filter(|&&x| (x & 2u32.pow(i)) == 2u32.pow(i)).count();
+                let ones = matches.iter().filter(|&&x| (x & 2i32.pow(i as u32)) == 2i32.pow(i as u32)).count();
                 let zeros = matches.len() - ones;
                 if ones == zeros || ones > zeros {
-                    matches = matches.into_iter().filter(|x| x & 2u32.pow(i) == 0).collect();
+                    matches = matches.into_iter().filter(|x| x & 2i32.pow(i as u32) == 0).collect();
                 } else {
-                    matches = matches.into_iter().filter(|x| x & 2u32.pow(i) == 2u32.pow(i)).collect();
+                    matches = matches.into_iter().filter(|x| x & 2i32.pow(i as u32) == 2i32.pow(i as u32)).collect();
                 }
             } else {
                 break;

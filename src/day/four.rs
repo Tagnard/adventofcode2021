@@ -1,6 +1,3 @@
-use core::num;
-use std::borrow::Borrow;
-
 #[derive(Debug, PartialEq, Clone, Copy)]
 enum Marking {
     Marked(u8),
