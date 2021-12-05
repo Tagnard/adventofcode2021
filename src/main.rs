@@ -10,4 +10,6 @@ fn main() {
     println!("Day 3 - Part 2: {}", day::three::part_two(Input::as_string("./input/day_3_part_2.txt")));
     println!("Day 4 - Part 1: {}", day::four::part_one(Input::as_string("./input/day_4_part_1.txt")));
     println!("Day 4 - Part 2: {}", day::four::part_two(Input::as_string("./input/day_4_part_2.txt")));
+    println!("Day 5 - Part 1: {}", day::five::part_one(Input::as_string("./input/day_5_part_1.txt")));
+    println!("Day 5 - Part 2: {}", day::five::part_two(Input::as_string("./input/day_5_part_2.txt")));
 }
